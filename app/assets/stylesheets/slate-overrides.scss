@@ -1,5 +1,8 @@
-.landing-jumbotron {
-  background-color: hsla(33, 45%, 23%, 0.6);
+$jumbotron-color:                hsla(33, 45%, 23%, 0.6);
+$jumbotron-bg:                   hsla(33, 45%, 23%, 0.6);
+$jumbotron-heading-color:        white;
+
+.landing-jumbotron h2 {
   color: white;
 }
 
@@ -15,6 +18,14 @@
   justify-content: center;
 }
 
+.flexcontainer2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 3em;
+}
+
 .s-ul {
   list-style: none;
   display: flex;
@@ -22,7 +33,7 @@
 }
 
 .box {
-  border-bottom: 1px solid #cacaca;
+  // border-bottom: 1px solid #cacaca;
   margin: 1em;
   text-align: right;
 }
@@ -41,20 +52,14 @@ li {
   margin: 0;
 }
 
-p {
-  font-size: 16px;
-  color: #333;
-  font-weight: bold;
-}
-
 .textline {
-  margin: 0px 5px;
+  margin: 5px 5px 0;
   display: flex;
   justify-content: space-between;
 }
 
 .firstleftline {
-  color: #0525f9;
+  color: #9aa6f5;
   font-size: 16px;
   font-weight: bold;
 }
@@ -72,4 +77,8 @@ p {
 
 .s-text {
   padding: 20px 0 0;
+}
+
+.s-btn {
+  padding: 0 0 2px 0;
 }

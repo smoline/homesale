@@ -3,7 +3,7 @@
     <span class="glyphicon glyphicon-plus"></span>
     New Home
   <% end %>
-  <h1 Listing>Homes for sale in your area</h1>
+  <h1 Listing>Homes for Sale</h1>
 </div>
 
 <div class="flexcontainer">
@@ -92,4 +92,22 @@
       <% end %>
     </tbody>
   </table>
+</div>
+<div class="container text-center">
+  <%= paginate @homes do %>
+    <nav>
+      <ul class="pagination pagination-lg">
+        <%= first_page_tag unless current_page.first? %>
+        <%= prev_page_tag unless current_page.first? %>
+        <% each_page do |page| %>
+          <% if page.left_outer? || page.right_outer? || page.inside_window? %>
+            <%= page_tag page %>
+          <% end %>
+        <% end %>
+        <%= next_page_tag unless current_page.last? %>
+        <%= last_page_tag unless current_page.last? %>
+      </ul>
+    </nav>
+  <% end %>
+  <%= page_entries_info @homes %>
 </div>

@@ -12,13 +12,13 @@
     Edit
   <% end %>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-5">
       <h1><%= @home.address %><br><%= @home.city %>, <%= @home.state %> <%= @home.zip %></h1>
     </div>
     <div class="col-md-2 col-md-offset-1">
       <h1><strong>$<%= @home.price %></strong></h1>
     </div>
-    <div class="col-md-3 col-md-offset-2">
+    <div class="col-md-3 col-md-offset-1">
       <h4 class="s-text">Listed <%= time_ago_in_words(@home.created_at) %> ago</h4>
     </div>
   </div>
@@ -30,15 +30,16 @@
       <%= image_tag(@home.image_url(:large)) %>
       <div class="textline">
         <h2>Year Built: <%= @home.year_built %></h2>
-        <h2> Floors: <%= @home.floors %></h2>
-      </div>
-      <div class="textline">
         <h2>Bedrooms: <%= @home.bedrooms %></h2>
         <h2>Bathrooms: <%= @home.bathrooms %></h2>
+
       </div>
       <div class="textline">
-        <h2>Square Footage: <%= @home.square_footage %></h2>
+        <h2> Floors: <%= @home.floors %></h2>
+        <h2><%= @home.square_footage %> Square Feet</h2>
         <h2>Lot size: <%= @home.lot_size %></h2>
+      </div>
+      <div class="textline">
       </div>
       <% if @home.hoa %>
         <div class="textline2">
@@ -49,10 +50,11 @@
         <h2>Parking: <%= @home.parking %></h2>
         <h2>Listed By: <%= @home.created_by %></h2>
       </div>
-      <div class="textline">
-        <h3><%= @home.description %></h3>
-      </div>
-
     </li>
   </ul>
+</div>
+<div class="flexcontainer2">
+  <div class="textline">
+    <p><%= @home.description %></p>
+  </div>
 </div>
