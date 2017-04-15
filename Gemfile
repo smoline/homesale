@@ -57,6 +57,13 @@ group :development do
   gem 'dotenv-rails'
 end
 
+# Image uploading support
+gem 'shrine'
+gem 'shrine-sql'
+gem 'roda'
+gem 'image_processing'
+gem 'mini_magick', ">= 4.3.5"
+
 gem 'refile', github: 'gstark/refile', branch: 'updates-for-rails-5', require: 'refile/rails'
 gem 'refile-postgres'
 group :production do
