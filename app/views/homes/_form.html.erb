@@ -97,7 +97,7 @@
           </div>
       </div>
 
-      <%# hoa, hoa_fee, and floors %>
+      <%# hoa, hoa_fee, and roof_type %>
       <div class="form-group">
         <div class="col-md-offset-2 col-md-2">
           <div class="checkbox">
@@ -110,6 +110,10 @@
         <%= f.label :hoa_fee, class: "col-md-2 control-label" %>
         <div class="col-md-1">
           <%= f.number_field :hoa_fee, class: "form-control", style: "width: 70px" %>
+        </div>
+        <%= f.label :roof_type, class: "col-md-1 control-label" %>
+        <div class="col-md-1">
+          <%= f.text_field :roof_type, class: "form-control", style: "width: 150px" %>
         </div>
       </div>
 

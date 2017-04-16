@@ -19,14 +19,11 @@ class HomesController < ApplicationController
   # GET /homes/1/edit
   def edit
     @home = Home.find(params[:id])
-    unless @home.created_by == current_user
-      redirect_to home_path, notice: "You are not authorized to perform that operation"
-    end
 
-    # unless @Home.can_this_user_edit?(current_user)
-    #   send_them_back_with_error
-    #   return
-    # end
+    unless @home.can_this_user_edit?(current_user)
+      send_them_back_with_error
+      return
+    end
   end
 
   def search
@@ -87,6 +84,6 @@ class HomesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def home_params
-    params.require(:home).permit(:address, :city, :state, :zip, :year_built, :bedrooms, :bathrooms, :square_footage, :price, :description, :parking, :lot_size, :hoa, :hoa_fee, :floors, :image)
+    params.require(:home).permit(:address, :city, :state, :zip, :year_built, :bedrooms, :bathrooms, :square_footage, :price, :description, :parking, :lot_size, :hoa, :hoa_fee, :floors, :image, :roof_type)
   end
 end
