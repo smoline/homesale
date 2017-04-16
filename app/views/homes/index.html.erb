@@ -1,7 +1,9 @@
 <div class="container page-header">
-  <%= link_to new_home_path, class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-plus"></span>
-    New Home
+  <% if logged_in? %>
+    <%= link_to new_home_path, class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-plus"></span>
+      New Home
+    <% end %>
   <% end %>
   <h1 Listing>Homes for Sale</h1>
 </div>

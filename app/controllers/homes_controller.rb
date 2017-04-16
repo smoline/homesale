@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
-  before_action :authenticate!, except: [:index]
+  before_action :authenticate!, except: [:index, :search, :show]
 
   # GET /homes
   def index
