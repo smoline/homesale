@@ -70,7 +70,11 @@
         <div class="col-md-1">
           <%= f.text_field :bathrooms, class: "form-control", style: "width: 70px" %>
         </div>
-        <%= f.label :square_footage, class: "col-md-1 control-label" %>
+        <%= f.label :floors, class: "col-md-1 control-label" %>
+        <div class="col-md-1">
+          <%= f.number_field :floors, class: "form-control", style: "width: 70px" %>
+        </div>
+        <%= f.label "Sqft", class: "col-md-1 control-label" %>
         <div class="col-md-1">
           <%= f.number_field :square_footage, class: "form-control", style: "width: 70px" %>
         </div>
@@ -107,10 +111,6 @@
         <div class="col-md-1">
           <%= f.number_field :hoa_fee, class: "form-control", style: "width: 70px" %>
         </div>
-        <%= f.label :floors, class: "col-md-2 control-label" %>
-        <div class="col-md-1">
-          <%= f.number_field :floors, class: "form-control", style: "width: 70px" %>
-        </div>
       </div>
 
       <%# description %>
@@ -118,14 +118,6 @@
         <%= f.label :description, class: "col-md-2 control-label" %>
         <div class="col-md-1">
           <%= f.text_area :description, class: "form-control", style: "width: 700px" %>
-        </div>
-      </div>
-
-      <%# created_by %>
-      <div class="form-group">
-        <%= f.label :created_by, class: "col-md-2 control-label" %>
-        <div class="col-md-10">
-          <%= f.number_field :created_by, class: "form-control", style: "width: 200px" %>
         </div>
       </div>
     </div>

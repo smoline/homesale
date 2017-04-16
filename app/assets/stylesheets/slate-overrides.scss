@@ -50,10 +50,6 @@ $jumbotron-heading-color:        white;
   text-align: right;
 }
 
-li {
-
-}
-
 .mainimage {
   /*max-width: 424px;*/
   height: 300px;
@@ -87,8 +83,18 @@ li {
   justify-content: center;
 }
 
-.s-text {
+.s-text
+  .s-text2
+  .s-text3 {
   padding: 20px 0 0;
+}
+
+.s-text2 {
+  color: #05ff53;
+}
+
+.s-text3 {
+  color: #fb0101;
 }
 
 .s-btn {

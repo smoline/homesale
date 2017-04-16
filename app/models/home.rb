@@ -1,6 +1,8 @@
 class Home < ApplicationRecord
   include ImageUploader[:image]
 
+  belongs_to :created_by, class_name: "User"
+
   validates :address, presence: true
   validates :city, presence: true
   validates :state, length: { is: 2 }
@@ -15,5 +17,13 @@ class Home < ApplicationRecord
 
   def self.search(search)
     where("address LIKE ? or city LIKE ? or state LIKE ? or zip LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+  end
+
+  def can_this_user_edit?(user)
+    created_by == user
+  end
+
+  def can_this_user_destroy?(user)
+    created_by == user
   end
 end

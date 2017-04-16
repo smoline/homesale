@@ -4,11 +4,6 @@ class HomesController < ApplicationController
   # GET /homes
   def index
     @homes = Home.page(params[:page]).per(6)
-    # if params[:search]
-    #   @homes_search = Home.search(params[:search])
-    # else
-    #   index
-    # end
   end
 
   # GET /homes/1
@@ -24,6 +19,14 @@ class HomesController < ApplicationController
   # GET /homes/1/edit
   def edit
     @home = Home.find(params[:id])
+    unless @home.created_by == current_user
+      redirect_to home_path, notice: "You are not authorized to perform that operation"
+    end
+
+    # unless @Home.can_this_user_edit?(current_user)
+    #   send_them_back_with_error
+    #   return
+    # end
   end
 
   def search
@@ -38,6 +41,7 @@ class HomesController < ApplicationController
   # POST /homes
   def create
     @home = Home.new(home_params)
+    @home.created_by = current_user
 
     if @home.save
       redirect_to @home, notice: 'Home was successfully created.'
@@ -49,6 +53,12 @@ class HomesController < ApplicationController
   # PATCH/PUT /homes/1
   def update
     @home = Home.find(params[:id])
+
+    unless @home.can_this_user_edit?(current_user)
+      send_them_back_with_error
+      return
+    end
+
     if @home.update(home_params)
       redirect_to @home, notice: 'Home was successfully updated.'
     else
@@ -59,14 +69,24 @@ class HomesController < ApplicationController
   # DELETE /homes/1
   def destroy
     @home = Home.find(params[:id])
+
+    unless @home.can_this_user_destroy?(current_user)
+      send_them_back_with_error
+      return
+    end
+
     @home.destroy
     redirect_to homes_url, notice: 'Home was successfully destroyed.'
   end
 
   private
 
+  def send_them_back_with_error
+    redirect_to homes_path, notice: "You are not allowed"
+  end
+
   # Only allow a trusted parameter "white list" through.
   def home_params
-    params.require(:home).permit(:address, :city, :state, :zip, :year_built, :bedrooms, :bathrooms, :square_footage, :price, :description, :parking, :lot_size, :hoa, :hoa_fee, :floors, :created_by, :image)
+    params.require(:home).permit(:address, :city, :state, :zip, :year_built, :bedrooms, :bathrooms, :square_footage, :price, :description, :parking, :lot_size, :hoa, :hoa_fee, :floors, :image)
   end
 end

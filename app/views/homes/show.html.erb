@@ -21,12 +21,12 @@
       <h1><strong>$<%= @home.price %></strong></h1>
     </div>
     <% if Time.now - @home.created_at <= 172800 %>
-      <div class="col-md-3 col-md-offset-1 alert-success">
-        <h4 class="s-text">Listed <%= time_ago_in_words(@home.created_at) %> ago</h4>
+      <div class="col-md-3 col-md-offset-1">
+        <h4 class="s-text2">Listed <%= time_ago_in_words(@home.created_at) %> ago</h4>
       </div>
     <% elsif Time.now - @home.created_at >= 2592000 %>
-      <div class="col-md-3 col-md-offset-1 alert-danger">
-        <h4 class="s-text">Listed <%= time_ago_in_words(@home.created_at) %> ago</h4>
+      <div class="col-md-3 col-md-offset-1">
+        <h4 class="s-text3">Listed <%= time_ago_in_words(@home.created_at) %> ago</h4>
       </div>
     <% else %>
       <div class="col-md-3 col-md-offset-1">
@@ -61,7 +61,7 @@
       <div class="textline">
         <h2>Parking: <%= @home.parking %></h2>
         <h2>Roof: <%= @home.roof_type %></h2>
-        <h2>Listed By: <%= @home.created_by %></h2>
+        <h2>Listed By: <%= @home.created_by.name %></h2>
       </div>
     </li>
   </ul>
