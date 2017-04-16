@@ -1,8 +1,13 @@
 class HomesController < ApplicationController
+
   # GET /homes
   def index
-    # @homes = Home.all
-    @homes = Home.page(params[:page]).per(10)
+    @homes = Home.page(params[:page]).per(6)
+    # if params[:search]
+    #   @homes_search = Home.search(params[:search])
+    # else
+    #   index
+    # end
   end
 
   # GET /homes/1
@@ -18,6 +23,13 @@ class HomesController < ApplicationController
   # GET /homes/1/edit
   def edit
     @home = Home.find(params[:id])
+  end
+
+  def search
+    @homes_search = Home.search(params[:search])
+    if @homes_search
+      render :search
+    end
   end
 
   # POST /homes

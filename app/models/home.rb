@@ -12,4 +12,11 @@ class Home < ApplicationRecord
   validates :description, presence: true
   validates :parking, inclusion: { in: %w(None Street\ Parking Attached\ Garage Detached\ Garage), message: "must contain one of these: None, Street Parking, Attached Garage, or Detached Garage" }
   validates :hoa, inclusion: { in: [true, false] }
+
+  def self.search(search)
+    where("address LIKE ?", "%#{search}%")
+    where("city LIKE ?", "%#{search}%")
+    where("state LIKE ?", "%#{search}%")
+    where("zip LIKE ?", "%#{search}%")
+  end
 end

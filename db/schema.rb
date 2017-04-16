@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414200802) do
+ActiveRecord::Schema.define(version: 20170416002438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20170414200802) do
     t.string   "address"
     t.string   "city"
     t.string   "state"
-    t.integer  "zip"
     t.integer  "year_built"
     t.integer  "bedrooms"
     t.float    "bathrooms"
@@ -32,7 +31,6 @@ ActiveRecord::Schema.define(version: 20170414200802) do
     t.integer  "price"
     t.string   "description"
     t.string   "parking"
-    t.integer  "lot_size"
     t.boolean  "hoa"
     t.integer  "hoa_fee"
     t.integer  "floors"
@@ -40,6 +38,9 @@ ActiveRecord::Schema.define(version: 20170414200802) do
     t.text     "image_data"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "roof_type"
+    t.string   "lot_size"
+    t.string   "zip"
   end
 
 end

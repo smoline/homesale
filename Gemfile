@@ -65,8 +65,8 @@ gem 'mini_magick', ">= 4.3.5"
 # Pagination
 gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
 
-gem 'refile', github: 'gstark/refile', branch: 'updates-for-rails-5', require: 'refile/rails'
-gem 'refile-postgres'
+# gem 'refile', github: 'gstark/refile', branch: 'updates-for-rails-5', require: 'refile/rails'
+# gem 'refile-postgres'
 group :production do
   gem 'rails_12factor'
 end
