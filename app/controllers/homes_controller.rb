@@ -1,4 +1,5 @@
 class HomesController < ApplicationController
+  before_action :authenticate!, except: [:index]
 
   # GET /homes
   def index
@@ -29,6 +30,8 @@ class HomesController < ApplicationController
     @homes_search = Home.search(params[:search])
     if @homes_search
       render :search
+    else
+      redirect_to @homes, notice: 'Your search did not return any results'
     end
   end
 

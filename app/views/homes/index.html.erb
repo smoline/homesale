@@ -6,7 +6,7 @@
   <h1 Listing>Homes for Sale</h1>
 </div>
 
-<div class="flexcontainer">
+<div class="container-fluid">
   <ul class="s-ul">
     <%- @homes.each do |home| %>
     <li class="box">
@@ -42,6 +42,7 @@
         <th>Bedrooms</th>
         <th>Bathrooms</th>
         <th>Square footage</th>
+        <th>Roof Type</th>
         <th>Price</th>
         <th>Description</th>
         <th>Parking</th>
@@ -65,6 +66,7 @@
         <td><%= home.bedrooms %></td>
         <td><%= home.bathrooms %></td>
         <td><%= home.square_footage %></td>
+        <td><%= home.roof_type %></td>
         <td><%= home.price %></td>
         <td><%= home.description %></td>
         <td><%= home.parking %></td>

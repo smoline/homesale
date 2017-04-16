@@ -6,6 +6,7 @@
     <% if @homes_search.any? %>
       <%- @homes_search.each do |home| %>
       <li class="box">
+        
         <%= image_tag(home.image_url(:medium), class:'mainimage') %>
         <div class="textline">
           <p class="firstleftline">$<%= home.price %></p>

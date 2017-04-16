@@ -23,11 +23,14 @@ gem 'uglifier', '>= 1.3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+# Authentication via oauth
+gem 'omniauth'
+gem 'omniauth-github'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -64,6 +67,7 @@ gem 'mini_magick', ">= 4.3.5"
 
 # Pagination
 gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
+
 
 # gem 'refile', github: 'gstark/refile', branch: 'updates-for-rails-5', require: 'refile/rails'
 # gem 'refile-postgres'

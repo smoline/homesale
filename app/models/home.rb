@@ -14,9 +14,6 @@ class Home < ApplicationRecord
   validates :hoa, inclusion: { in: [true, false] }
 
   def self.search(search)
-    where("address LIKE ?", "%#{search}%")
-    where("city LIKE ?", "%#{search}%")
-    where("state LIKE ?", "%#{search}%")
-    where("zip LIKE ?", "%#{search}%")
+    where("address LIKE ? or city LIKE ? or state LIKE ? or zip LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
   end
 end
