@@ -86,9 +86,9 @@
         <div class="col-md-2">
           <%= f.number_field :price, class: "form-control", style: "width: 150px" %>
         </div>
-        <%= f.label :parking, class: "col-md-1 control-label" %>
+        <%= f.label :roof_type, class: "col-md-1 control-label" %>
         <div class="col-md-1">
-          <%= f.text_field :parking, class: "form-control", style: "width: 150px" %>
+          <%= f.text_field :roof_type, class: "form-control", style: "width: 150px" %>
         </div>
         <div class="form-group">
           <%= f.label :lot_size, class: "col-md-2 control-label" %>
@@ -99,11 +99,11 @@
 
       <%# hoa, hoa_fee, and roof_type %>
       <div class="form-group">
-        <div class="col-md-offset-2 col-md-2">
+        <div class="col-md-offset-2 col-md-1">
           <div class="checkbox">
             <label>
               <%= f.check_box :hoa %>
-              This home has an HOA
+              HOA
             </label>
           </div>
         </div>
@@ -111,9 +111,9 @@
         <div class="col-md-1">
           <%= f.number_field :hoa_fee, class: "form-control", style: "width: 70px" %>
         </div>
-        <%= f.label :roof_type, class: "col-md-1 control-label" %>
+        <%= f.label :parking, class: "col-md-1 control-label" %>
         <div class="col-md-1">
-          <%= f.text_field :roof_type, class: "form-control", style: "width: 150px" %>
+          <%= f.select :parking, ['None', 'Street Parking', 'Attached Garage', 'Detached Garage'] %>
         </div>
       </div>
 
