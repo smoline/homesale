@@ -6,7 +6,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 
   provider :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
 
-  provider :linkedin, ENV['LINKEDIN_CLIENT_ID'], ENV['LINKEDIN_CLIENT_SECRET'], scope: 'r_basicprofile', fields: ['id', 'first-name', 'last-name', 'location', 'email-address', 'public-profile-url']
-  
-  provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_SECRET"], scope: 'profile'
+  provider :linkedin, ENV['LINKEDIN_CLIENT_ID'], ENV['LINKEDIN_CLIENT_SECRET'], scope: 'r_basicprofile', fields: ['id', 'first-name', 'last-name', 'public-profile-url']
+
+  provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_SECRET"], scope: 'profile', access_type: 'online', name: 'google'
 end
