@@ -12,7 +12,7 @@ class SessionController < ApplicationController
     if current_user
       redirect_to homes_path
     else
-      redirect_to auth_path(provider: 'github')
+      redirect_to login_path, notice: "There was an error while trying to authenticate you."
     end
   end
 

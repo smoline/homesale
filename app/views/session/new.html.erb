@@ -32,14 +32,17 @@
         <%= link_to auth_path(provider: 'github'), class: "btn btn-block btn-social btn-github" do %>
           <span class="fa fa-github"></span>Sign in with Github
         <% end %>
-        <%= link_to auth_path(provider: 'github'), class: "btn btn-block btn-social btn-facebook" do %>
+        <%= link_to auth_path(provider: 'twitter'), class: "btn btn-block btn-social btn-twitter" do %>
+        <span class="fa fa-twitter"></span>Sign in with Twitter
+        <% end %>
+        <%= link_to auth_path(provider: 'facebook'), class: "btn btn-block btn-social btn-facebook" do %>
           <span class="fa fa-facebook"></span>Sign in with Facebook
         <% end %>
         <%= link_to auth_path(provider: 'linkedin'), class: "btn btn-block btn-social btn-linkedin" do %>
           <span class="fa fa-linkedin"></span>Sign in with Linkedin
         <% end %>
-        <%= link_to auth_path(provider: 'twitter'), class: "btn btn-block btn-social btn-twitter" do %>
-          <span class="fa fa-twitter"></span>Sign in with Twitter
+        <%= link_to auth_path(provider: 'google_oauth2'), class: "btn btn-block btn-social btn-google" do %>
+          <span class="fa fa-google"></span>Sign in with Google
         <% end %>
       </form>
     </div>

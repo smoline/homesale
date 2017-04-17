@@ -11,6 +11,7 @@ class User < ApplicationRecord
     user.nickname     = authentication_data.info.nickname
     user.access_token = authentication_data.info.access_token
     user.profile_url  = authentication_data.info.urls
+    # user.profile_url  = get_social_url_for user.provider, authentication_data.info.urls
 
     user.save!
 
@@ -18,4 +19,19 @@ class User < ApplicationRecord
 
     return user
   end
+
+  private
+
+  # def get_social_url_for(provider, urls_hash)
+  #   case provider
+  #   when 'linkedin'
+  #     urls_hash['public_profile']
+  #   when 'twitter'
+  #     urls_hash.info.urls.twitter
+  #   when 'github'
+  #     urls_hash.info.urls
+  #   else
+  #     urls_hash[provider.capitalize]
+  #   end
+  # end
 end
