@@ -28,11 +28,6 @@ class HomesController < ApplicationController
 
   def search
     @homes_search = Home.search(params[:search])
-    if @homes_search
-      render :search
-    else
-      redirect_to @homes, notice: 'Your search did not return any results'
-    end
   end
 
   # POST /homes

@@ -3,10 +3,11 @@
 </div>
 <div class="flexcontainer">
   <ul class="s-ul">
-    <% if @homes_search.any? %>
+    <% if @homes_search.empty? %>
+      <h2>Sorry we did not find any results</h2>
+    <% else %>
       <%- @homes_search.each do |home| %>
       <li class="box">
-        
         <%= image_tag(home.image_url(:medium), class:'mainimage') %>
         <div class="textline">
           <p class="firstleftline">$<%= home.price %></p>
@@ -23,8 +24,6 @@
         </div>
       </li>
       <% end %>
-    <% else %>
-
     <% end %>
   </ul>
 </div>

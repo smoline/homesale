@@ -3,7 +3,7 @@
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
-  <% if logged_in? %>
+  <% if logged_in? && @home.created_by == current_user %>
     <%= link_to @home, class:'btn btn-primary', method: :delete, data: { confirm: 'Are you sure?' } do %>
       <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
       Delete
@@ -20,11 +20,11 @@
     <div class="col-md-2">
       <h1><strong>$<%= @home.price %></strong></h1>
     </div>
-    <% if Time.now - @home.created_at <= 172800 %>
+    <% if Time.now - @home.created_at <= 2.days %>
       <div class="col-md-3 col-md-offset-2">
         <h4 class="s-text2">Listed <%= time_ago_in_words(@home.created_at) %> ago</h4>
       </div>
-    <% elsif Time.now - @home.created_at >= 2592000 %>
+    <% elsif Time.now - @home.created_at >= 30.days %>
       <div class="col-md-3 col-md-offset-2">
         <h4 class="s-text3">Listed <%= time_ago_in_words(@home.created_at) %> ago</h4>
       </div>

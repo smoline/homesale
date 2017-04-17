@@ -31,6 +31,9 @@ gem 'jquery-rails'
 # Authentication via oauth
 gem 'omniauth'
 gem 'omniauth-github'
+# gem 'omniauth-facebook'
+gem 'omniauth-linkedin-oauth2', '~> 0.1.5'
+gem 'omniauth-twitter', '~> 1.4'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
