@@ -33,7 +33,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter', '~> 1.4'
-gem 'omniauth-linkedin-oauth2', '~> 0.1.5'
+gem 'omniauth-linkedin', '~> 0.2.0'
 gem 'omniauth-google-oauth2', '~> 0.4.1'
 
 # Use Capistrano for deployment
