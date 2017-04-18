@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'pages#landing'
 
   get '/search' => 'homes#search'
+  # get '/adv_search' => 'homes#adv_search'
 
   get    '/auth/:provider'          => 'omniauth#auth',    as: :auth
   get    '/auth/:provider/callback' => 'session#create'
