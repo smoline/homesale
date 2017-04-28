@@ -1,3 +1,3 @@
 console.log('There are <%= @homes.size %> homes that match your search')
 
-$('.box').html('Results here')
+$('.box').html('<%= j(render @homes) %>')
