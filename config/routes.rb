@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :homes
   root 'pages#landing'
 
-  get '/search' => 'homes#search'
+  # get '/search' => 'homes#search'
   # get '/adv_search' => 'homes#adv_search'
 
   get    '/auth/:provider'          => 'omniauth#auth',    as: :auth

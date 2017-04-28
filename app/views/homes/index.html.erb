@@ -10,24 +10,7 @@
 
 <div class="container-fluid">
   <ul class="s-ul">
-    <%- @homes.each do |home| %>
-      <li class="box">
-        <%= image_tag(home.image_url(:medium), class:'mainimage') %>
-        <div class="textline">
-          <p class="firstleftline">$<%= home.price %></p>
-          <p><%= home.city %>, <%= home.state %>  <%= home.zip %></p>
-        </div>
-        <div class="textline">
-          <p class="secondleftline"><%= home.square_footage %> SqFeet</p>
-          <p><%= home.bedrooms %> Bedrooms, <%= home.bathrooms %> Bathrooms</p>
-        </div>
-        <div>
-          <%= link_to home, class: 'btn btn-primary' do %>
-            See More
-          <% end %>
-        </div>
-      </li>
-    <% end %>
+    <%= render @homes %>
   </ul>
 </div>
 
