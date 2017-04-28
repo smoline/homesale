@@ -3,7 +3,11 @@ class HomesController < ApplicationController
 
   # GET /homes
   def index
-    @homes = Home.page(params[:page]).per(6)
+    if params[:search]
+      @homes = Home.search(params[:search]).page(params[:page]).per(6)
+    else
+      @homes = Home.page(params[:page]).per(6)
+    end
   end
 
   # GET /homes/1
@@ -24,10 +28,6 @@ class HomesController < ApplicationController
       send_them_back_with_error
       return
     end
-  end
-
-  def search
-    @homes_search = Home.search(params[:search])
   end
 
   # POST /homes
