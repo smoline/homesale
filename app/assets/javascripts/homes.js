@@ -2,11 +2,18 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function() {
-  $('p').on('click', function(event) {
-    $(this).css({ color: 'red' })
-  })
-})
 
-$('#query').on('input', function(event) {
-  console.log('you typed something')
+  $('#query').on('input', function(event) {
+    let queryValue = $(this).val()
+
+    console.log(`You are searching for ${queryValue}`)
+
+    $('#spinner').show()
+
+    $.ajax({
+      url: '/homes',
+      data: { search: queryValue },
+      dataType: 'script'
+    })
+  })
 })
