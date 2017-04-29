@@ -47,11 +47,13 @@
           <% end %>
         </ul>
         <ul>
-          <%= form_tag(homes_path, :method => "get", id: "search-form", class: "navbar-form navbar-right form-inline") do %>
-          <div class="form-group">
-            <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search", style: 'width: 300px', id: 'query' %>
-            <%= submit_tag "Search", class: "btn btn-default" %>
-          </div>
+          <% if action_name == "index" %>
+            <%= form_tag(homes_path, :method => "get", id: "search-form", class: "navbar-form navbar-right form-inline") do %>
+            <div class="form-group">
+              <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search", style: 'width: 300px', id: 'query' %>
+              <%= submit_tag "Search", class: "btn btn-default" %>
+            </div>
+            <% end %>
           <% end %>
         </ul>
       </div>

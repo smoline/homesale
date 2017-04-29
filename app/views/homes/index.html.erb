@@ -10,7 +10,11 @@
 
 <div class="container-fluid">
   <ul class="s-ul">
-    <%= render @homes %>
+    <% if @homes.empty? %>
+      <%= render 'empty_homes' %>
+    <% else %>
+      <%= render @homes %>
+    <% end %>
   </ul>
 </div>
 

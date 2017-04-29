@@ -8,7 +8,7 @@ $(document).ready(function() {
 
     console.log(`You are searching for ${queryValue}`)
 
-    $('#spinner').show()
+    // $('#spinner').show()
 
     $.ajax({
       url: '/homes',
