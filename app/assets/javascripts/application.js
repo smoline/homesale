@@ -15,5 +15,6 @@
 
 //= require 'cable'
 //= require 'homes'
+//= require underscore
 
 //= require 'bootstrap'

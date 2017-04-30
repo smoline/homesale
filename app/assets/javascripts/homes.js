@@ -63,22 +63,31 @@ $(document).ready(function() {
     $(this).replaceWith( `<h4 class="sqFeet" data-sqfeet="${sqFeet}">${sqFeet} Square Feet</h4>` )
   })
 
-// Dynamic Searching
-  $('#query').on('input', function(event) {
+// Dynamic Searching with Debouncing
+  $('#query').on('input', _.debounce(function(event) {
     let queryValue = $(this).val()
-
-    console.log(`You are searching for ${queryValue}`)
 
     $.ajax({
       url: '/homes',
       data: { search: queryValue },
       dataType: 'script'
     })
-  })
+  }, 400))
 
 // Pagination with AJAX and kaminari
   $('.pagination').on('click', '.page', function(event) {
       var baseUrl = document.location.target;
   })
+
+// Debouncing
+  // $('#query').on('input', _.debounce(function(event) {
+  //  let queryValue = $(this).val()
+  //  $.ajax({
+  //    url: '/homes',
+  //    data: { query: queryValue },
+  //    dataType: 'script'
+  //  })
+  // }, 400))
+
 
 })
