@@ -18,7 +18,7 @@ $(document).ready(function() {
     })
   })
 
-  // Square Feet to Square Meters
+  // Square Feet to Square Meters on index
   $('.s-ul').on('click', '.sqFeetMeters', function(event) {
     let sqFeet = $(this).data("sqfeet")
     let sqMeters = (sqFeet * 0.0929).toFixed(2)
@@ -26,11 +26,26 @@ $(document).ready(function() {
     $(this).replaceWith( `<p class="secondleftline sqMetersFeet" data-sqfeet="${sqFeet}">${sqMeters} SqMeters</p>` )
   })
 
-  // Square Meters to Square Feet
+  // Square Meters to Square Feet on index
   $('.s-ul').on('click', '.sqMetersFeet', function(event) {
     let sqFeet = $(this).data("sqfeet")
     console.log(`The value is ${sqFeet}`)
     $(this).replaceWith( `<p class="secondleftline sqFeetMeters" data-sqfeet="${sqFeet}">${sqFeet} SqFeet</p>` )
+  })
+
+  // Square Feet to Square Meters on show
+  $('.s-ul').on('click', '.sqFeet', function(event) {
+    let sqFeet = $(this).data("sqfeet")
+    let sqMeters = (sqFeet * 0.0929).toFixed(2)
+    console.log(`The value is ${sqMeters}`)
+    $(this).replaceWith( `<h4 class="sqMeters" data-sqfeet="${sqFeet}">${sqMeters} Square Meters</h4>` )
+  })
+
+  // Square Meters to Square Feet on show
+  $('.s-ul').on('click', '.sqMeters', function(event) {
+    let sqFeet = $(this).data("sqfeet")
+    console.log(`The value is ${sqFeet}`)
+    $(this).replaceWith( `<h4 class="sqFeet" data-sqfeet="${sqFeet}">${sqFeet} Square Feet</h4>` )
   })
 
 // Dynamic Searching
