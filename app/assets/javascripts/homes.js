@@ -4,24 +4,28 @@
 $(document).ready(function() {
 
   // Favorites
-  $('.fav-heart').on('click', function(event) {
+  $('.s-ul').on('click', '.fav-heart', function(event) {
     $(this).css({ color: "red" })
     let homeId = $(this).data("homeid")
     console.log(`The value is ${homeId}`)
   })
 
-// Square Feet to Square Meters
-  $('.sqFeetMeters').on('click', function(event) {
-    let sqMeters = $(this).data("sqfeet") * 0.0929
-    console.log(`The value is ${sqMeters}`)
-    $(this).replaceWith( `<p class="secondleftline sqFeetMeters" data-sqfeet="<%= home.square_footage %>">${sqMeters} SqMeters</p>` )
+  $('.s-ul').off('click', '.fav-heart', function(event) {
+    $('.fav-heart').off("click");
   })
 
-// Square Meters to Square Feet
-  $('.sqFeetMeters').off('click', function(event) {
+  // Square Feet to Square Meters
+  $('.s-ul').on('click', '.sqFeetMeters', function(event) {
+    let sqMeters = $(this).data("sqfeet") * 0.0929
+    console.log(`The value is ${sqMeters}`)
+    $(this).replaceWith( `<p class="secondleftline sqMetersFeet" data-sqfeet="${sqMeters}">${sqMeters} SqMeters</p>` )
+  })
+
+  // Square Meters to Square Feet
+  $('.s-ul').on('click', '.sqMetersFeet', function(event) {
     let sqFeet = $(this).data("sqfeet")
     console.log(`The value is ${sqFeet}`)
-    $(this).replaceWith( `<p class="secondleftline sqFeetMeters" data-sqfeet="<%= home.square_footage %>"><%= home.square_footage %> SqFeet</p>` )
+    $(this).replaceWith( `<p class="secondleftline sqFeetMeters" data-sqfeet="${sqFeet}">${sqFeet} SqFeet</p>` )
   })
 
 // Dynamic Searching
@@ -30,12 +34,12 @@ $(document).ready(function() {
 
     console.log(`You are searching for ${queryValue}`)
 
-    // $('#spinner').show()
-
     $.ajax({
       url: '/homes',
       data: { search: queryValue },
       dataType: 'script'
     })
   })
+
+
 })
