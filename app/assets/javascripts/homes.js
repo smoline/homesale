@@ -7,12 +7,21 @@ $(document).ready(function() {
   $('.s-ul').on('click', '.fav-heart', function(event) {
     $(this).css({ color: "red" })
     let homeId = $(this).data("homeid")
+
     console.log(`The value is ${homeId}`)
+
+    $.ajax({
+      type: "POST",
+      url: `favorites/:${homeId}`,
+      success: function(event) {
+        $('.fav-heart').css({ color: "red" })
+      }
+    })
   })
 
-  $('.s-ul').off('click', '.fav-heart', function(event) {
-    $('.fav-heart').off("click");
-  })
+  // $('.s-ul').off('click', '.fav-heart', function(event) {
+  //   $('.fav-heart').off("click");
+  // })
 
   // Square Feet to Square Meters
   $('.s-ul').on('click', '.sqFeetMeters', function(event) {
