@@ -16,9 +16,10 @@ $(document).ready(function() {
 
   // Square Feet to Square Meters
   $('.s-ul').on('click', '.sqFeetMeters', function(event) {
-    let sqMeters = $(this).data("sqfeet") * 0.0929
+    let sqFeet = $(this).data("sqfeet")
+    let sqMeters = sqFeet * 0.0929
     console.log(`The value is ${sqMeters}`)
-    $(this).replaceWith( `<p class="secondleftline sqMetersFeet" data-sqfeet="${sqMeters}">${sqMeters} SqMeters</p>` )
+    $(this).replaceWith( `<p class="secondleftline sqMetersFeet" data-sqfeet="${sqFeet}">${sqMeters} SqMeters</p>` )
   })
 
   // Square Meters to Square Feet
