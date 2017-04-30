@@ -17,7 +17,7 @@ $(document).ready(function() {
   // Square Feet to Square Meters
   $('.s-ul').on('click', '.sqFeetMeters', function(event) {
     let sqFeet = $(this).data("sqfeet")
-    let sqMeters = sqFeet * 0.0929
+    let sqMeters = (sqFeet * 0.0929).toFixed(2)
     console.log(`The value is ${sqMeters}`)
     $(this).replaceWith( `<p class="secondleftline sqMetersFeet" data-sqfeet="${sqFeet}">${sqMeters} SqMeters</p>` )
   })
