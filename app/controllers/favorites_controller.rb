@@ -5,7 +5,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    favorite = Favorite.find(:home_id => params[:homeId], :user_id => current_user.id)
+    favorite = Favorite.find(:home_id => params[:homeId], :user_id => current_user)
     favorite.destroy
   end
 
