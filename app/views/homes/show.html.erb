@@ -72,6 +72,9 @@
           Medium
         </button>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalLarge">Large</button>
+        <% if logged_in? %>
+          <p class="pull-right fav-heart" data-remote=true data-type=script data-homeid="<%= @home.id %>"> &hearts;</p>
+        <% end %>
       </div>
       <div class="textline">
         <h4>Year Built: <%= @home.year_built %></h4>

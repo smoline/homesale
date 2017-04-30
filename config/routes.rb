@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  post 'favorites/:homeId'        =>  'favorites#create'
-  get 'favorites/destroy/:homeId' =>  'favorites#destroy'
+  post 'favorites/:homeId'           =>  'favorites#create'
+  delete 'favorites/destroy/:homeId' =>  'favorites#destroy'
 
   get 'pages/landing'
   resources :homes

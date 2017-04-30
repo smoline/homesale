@@ -18,8 +18,9 @@
   </ul>
 </div>
 
-<div class="container text-center">
-  <%= paginate @homes do %>
+<div class="text-center" id="paginator">
+  <%= paginate @homes, :remote => true %>
+  <!-- <%= paginate @homes do %>
     <nav>
       <ul class="pagination pagination-lg">
         <%= first_page_tag unless current_page.first? %>
@@ -34,5 +35,5 @@
       </ul>
     </nav>
   <% end %>
-  <%= page_entries_info @homes %>
+  <%= page_entries_info @homes %> -->
 </div>

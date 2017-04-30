@@ -9,7 +9,9 @@
     <p><%= home.bedrooms %> Bedrooms, <%= home.bathrooms %> Bathrooms</p>
   </div>
   <div>
-    <% if logged_in? %>
+    <% if logged_in? && favorited(home.id) == true %>
+      <p class="pull-left faved-heart" data-remote=true data-type=script data-homeid="<%= home.id %>"> &hearts;</p>
+    <% elsif logged_in? && favorited(home.id) == false %>
       <p class="pull-left fav-heart" data-remote=true data-type=script data-homeid="<%= home.id %>"> &hearts;</p>
     <% end %>
     <%= link_to home, class: 'btn btn-primary' do %>

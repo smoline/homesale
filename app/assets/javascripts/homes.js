@@ -3,17 +3,32 @@
 
 $(document).ready(function() {
 
-  // Favorites
+  // Favoriting
   $('.s-ul').on('click', '.fav-heart', function(event) {
     let homeId = $(this).data("homeid")
-
     console.log(`The value is ${homeId}`)
+    $(this).replaceWith( `<p class="pull-left faved-heart" data-remote=true data-type=script data-homeid="${homeId}"> &hearts;</p>` )
 
     $.ajax({
       type: "POST",
       url: 'favorites/' + homeId,
       success: function(event) {
-        $('.fav-heart').css({ color: "red" })
+        // $(this).css({ color: 'red' })
+      }
+    })
+  })
+
+  // Unfavoriting
+  $('.s-ul').on('click', '.faved-heart', function(event) {
+    let homeId = $(this).data("homeid")
+    console.log(`The value is ${homeId}`)
+    $(this).replaceWith( `<p class="pull-left fav-heart" data-remote=true data-type=script data-homeid="${homeId}"> &hearts;</p>` )
+
+    $.ajax({
+      type: "DELETE",
+      url: 'favorites/destroy/' + homeId,
+      success: function(event) {
+        // $(this).css({ color: 'red' })
       }
     })
   })
@@ -61,5 +76,9 @@ $(document).ready(function() {
     })
   })
 
+// Pagination with AJAX and kaminari
+  $('.pagination').on('click', '.page', function(event) {
+      var baseUrl = document.location.target;
+  })
 
 })
