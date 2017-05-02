@@ -5,7 +5,12 @@
     <p><%= home.city %>, <%= home.state %>  <%= home.zip %></p>
   </div>
   <div class="textline">
-    <p class="secondleftline sqFeetMeters" data-sqfeet="<%= home.square_footage %>"><%= home.square_footage %> SqFeet</p>
+    <p class="secondleftline sqFeetMeters"
+        data-showing-meters="false"
+        data-sqmeters="<%= home.square_footage_meters %>"
+        data-sqfeet="<%= home.square_footage %>">
+          <%= home.square_footage %> SqFeet
+    </p>
     <p><%= home.bedrooms %> Bedrooms, <%= home.bathrooms %> Bathrooms</p>
   </div>
   <div>

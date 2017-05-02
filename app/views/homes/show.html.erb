@@ -85,7 +85,12 @@
       </div>
       <div class="textline">
         <h4> Floors: <%= @home.floors %></h4>
-        <h4 class="sqFeet" data-sqfeet="<%= @home.square_footage %>"><%= @home.square_footage %> Square Feet</h4>
+        <h4 class="sqFeet"
+          data-showing-meters="false"
+          data-sqmeters="<%= @home.square_footage_meters %>"
+          data-sqfeet="<%= @home.square_footage %>">
+          <%= @home.square_footage %> Square Feet
+        </h4>
         <h4>Lot size: <%= @home.lot_size %></h4>
       </div>
       <div class="textline">

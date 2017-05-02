@@ -27,4 +27,8 @@ class Home < ApplicationRecord
   def can_this_user_destroy?(user)
     created_by == user
   end
+
+  def square_footage_meters
+    square_footage.to_i * 0.0929
+  end
 end

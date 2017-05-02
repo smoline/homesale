@@ -17,4 +17,4 @@
 //= require 'homes'
 //= require underscore
 
-//= require 'bootstrap'
+//= require bootstrap
