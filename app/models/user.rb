@@ -18,10 +18,6 @@ class User < ApplicationRecord
     user.profile_url  = authentication_data.info.urls
     user.email        = authentication_data.info.email
 
-    if user.new_record?
-      NotificationMailer.signup_email(user).deliver_later
-    end
-
     user.save!
 
     Rails.logger.debug "After saving, the user is #{user.inspect}"

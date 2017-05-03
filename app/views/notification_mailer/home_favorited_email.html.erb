@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @home.created_by.name %>, Your listing was Favorited!</h1>
+    <p>
+      At <%= Time.now %>, <%= @user.name %> favorited your listing located at <%= @home.address %>, <%= @home.city %>, <%= @home.state %>  <%= @home.zip %><br>
+    </p>
+  </body>
+</html>

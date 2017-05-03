@@ -7,11 +7,11 @@ class NotificationMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Welcome to Homes4sale')
   end
 
-  def home_favorited_email(home)
+  def home_favorited_email(home, current_user)
+    @user = current_user
     @home = home
-
     mail subject: "Your Listing was Favorited!",
-              to: created_by.email
+              to: @home.created_by.email
   end
 
   def homes_update(homes)

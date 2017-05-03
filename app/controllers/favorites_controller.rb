@@ -1,8 +1,9 @@
 class FavoritesController < ApplicationController
 
   def create
-    current_user.favorites.create(:home_id => params[:homeId])
-    NotificationMailer.home_favorited(home).deliver_later
+    favorite = current_user.favorites.create(:home_id => params[:homeId])
+    home = Home.find(:id => params[:homeId])
+    NotificationMailer.home_favorited_email(home, current_user).deliver_later
   end
 
   def destroy
