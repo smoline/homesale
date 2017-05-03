@@ -10,12 +10,17 @@ class User < ApplicationRecord
                       uid: authentication_data['uid']).first_or_create
 
     Rails.logger.debug "The user is #{user.inspect}"
+    Rails.logger.debug "The authinfo is #{authentication_data.info}"
 
     user.name         = authentication_data.info.name
     user.nickname     = authentication_data.info.nickname
     user.access_token = authentication_data.info.access_token
     user.profile_url  = authentication_data.info.urls
     user.email        = authentication_data.info.email
+
+    if user.new_record?
+      NotificationMailer.signup_email(user).deliver_later
+    end
 
     user.save!
 

@@ -1,0 +1,24 @@
+class NotificationMailer < ApplicationMailer
+  default from: 'notifications@homesale.com'
+
+  def signup_email(user)
+    @user = user
+    @url  = 'http://homes4sale.com/login'
+    mail(to: @user.email, subject: 'Welcome to Homes4sale')
+  end
+
+  def home_favorited_email(home)
+    @home = home
+
+    mail subject: "Your Listing was Favorited!",
+              to: created_by.email
+  end
+
+  def homes_update(homes)
+    @homes = Home.where("created_at < ?", 7.days.ago)
+
+    mail subject: "New Listings",
+              to: "nobody@homes4sale.com",
+             bcc: User.all.pluck(:email)
+  end
+end

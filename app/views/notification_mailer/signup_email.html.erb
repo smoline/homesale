@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to homes4sale.com, <%= @user.name %></h1>
+    <p>
+      You have successfully signed into homes4sale.com,
+      your username is: <%= @user.name %>.<br>
+    </p>
+    <p>
+      Thank you so much for signing up for homes4sale. You can see the latest listings here: <%= link_to "Home Listings", homes_url %>
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= link_to "Login", login_url %>.
+    </p>
+    <p>
+      Have a home you want sell, <%= link_to "Post it on Homes4sale", new_home_url %>
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
