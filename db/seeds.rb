@@ -23,19 +23,19 @@ home9.update(created_at: '2017-02-17 12:10:36 UTC')
 
 # Listed under 2 days ago
 home2 = Home.where(id: 2)
-home2.update(created_at: '2017-04-17 12:16:36 UTC')
+home2.update(created_at: '2017-05-01 12:16:36 UTC')
 
 home4 = Home.where(id: 4)
-home4.update(created_at: '2017-04-17 12:15:36 UTC')
+home4.update(created_at: '2017-05-01 12:15:36 UTC')
 
 home6 = Home.where(id: 6)
-home6.update(created_at: '2017-04-17 12:14:36 UTC')
+home6.update(created_at: '2017-05-01 12:14:36 UTC')
 
 home8 = Home.where(id: 8)
-home8.update(created_at: '2017-04-17 12:13:36 UTC')
+home8.update(created_at: '2017-05-01 12:13:36 UTC')
 
 home10 = Home.where(id: 10)
-home10.update(created_at: '2017-04-17 12:12:36 UTC')
+home10.update(created_at: '2017-05-01 12:12:36 UTC')
 
 home14 = Home.where(id: 14)
-home14.update(created_at: '2017-04-17 12:11:36 UTC')
+home14.update(created_at: '2017-05-01 12:11:36 UTC')

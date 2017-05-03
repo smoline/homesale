@@ -15,7 +15,8 @@ class NotificationMailer < ApplicationMailer
   end
 
   def homes_update(homes)
-    @homes = Home.where("created_at < ?", 7.days.ago)
+    @homes = homes
+    new_homes = @homes.each { |home| Time.now - home.created_at < 7.days }
 
     mail subject: "New Listings",
               to: "nobody@homes4sale.com",

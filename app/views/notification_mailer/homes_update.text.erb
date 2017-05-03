@@ -1,0 +1,12 @@
+Here are all the listings posted this week!
+<% @homes.each do |home| %>
+  <%= image_tag(home.image_url(:medium), class:'mainimage') %>
+  $<%= home.price %>
+  <%= home.city %>, <%= home.state %>  <%= home.zip %>
+  <%= home.square_footage %> SqFeet
+  <%= home.bedrooms %> Bedrooms, <%= home.bathrooms %> Bathrooms
+  <%= link_to home, class: 'btn btn-primary' do %>
+    See More
+  <% end %>
+<% end %>
+You can see even more on each of these listings here: <%= link_to "Home Listings", homes_url %>
