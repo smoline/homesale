@@ -14,7 +14,7 @@ The purpose of this app was to create a "Zillow Clone".
   * Zip
   * Number of bedrooms
   * Number of baths
-  * Square footage
+  * Square footage (can be changed via jQuery to square meters by clicking on it in the index and show pages)
   * Price
   * Description
 * And the following optional fields:
@@ -26,8 +26,11 @@ The purpose of this app was to create a "Zillow Clone".
   * HOA fee
   * Number of floors
   * Year built
+* Photos of the home can be uploaded and are processed into 3 sizes, these are then available to see via a modal.
 * The index shows all the homes for sale.
-* Pagination is through the kaminari gem
+* Pagination is through the kaminari gem and is updated with AJAX
 * The home show page displays how long ago the home was posted with special colors for home listed less than 2 days ago and more than 30 days ago
-* Search functionality exists for address, city, state, zip, or any part of that field, and was updated with jQuery and AJAX as you type
+* Search functionality exists for address, city, state, zip, or any part of that field, and is updated with jQuery and AJAX as you type
 * Users are only permitted to edit or delete homes they created
+* A favoriting feature was added via jQuery and AJAX
+* Logout and Delete functions pop up an "Are you sure" modal
