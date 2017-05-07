@@ -31,3 +31,7 @@ The purpose of this app was to create a "Zillow Clone".
 * The home show page displays how long ago the home was posted with special colors for home listed less than 2 days ago and more than 30 days ago
 * Search functionality exists for address, city, state, zip, or any part of that field, and was updated with jQuery and AJAX as you type
 * Users are only permitted to edit or delete homes they created
+
+![Homes4Sale Landing](docs/landingPage.png)
+
+![Homes for Sale Index](docs/HomeIndex.png)
