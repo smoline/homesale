@@ -16,7 +16,6 @@ class NotificationMailer < ApplicationMailer
 
   def homes_update(homes)
     @homes = homes
-    new_listings =
 
     mail subject: "New Listings",
               to: "nobody@homes4sale.com",
