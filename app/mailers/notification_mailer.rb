@@ -1,5 +1,5 @@
 class NotificationMailer < ApplicationMailer
-  default from: 'notifications@homesale.com'
+  default from: 'smoline@gmail.com'
 
   def signup_email(user)
     @user = user
