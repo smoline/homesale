@@ -12,7 +12,7 @@ class NotificationMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/notification_mailer/homes_update
  def homes_update
-   NotificationMailer.homes_update(Home.all)
+   NotificationMailer.homes_update(Home.all, User.all)
  end
 
 end

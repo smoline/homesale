@@ -81,4 +81,5 @@ gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'ma
 # gem 'refile-postgres'
 group :production do
   gem 'rails_12factor'
+  # gem 'sendgrid-ruby'
 end
