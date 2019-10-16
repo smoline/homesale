@@ -7,7 +7,7 @@ The purpose of this app was to create a "Zillow Clone".
 * This app has Omniauth authentication, getting email, password, name, phone, address, and profile url.
 * Bootstrap 3 was used and then heavily customized.  
 * The landing page has a different design than the rest of the app.
-* User are able to list a home for sale with the following required fields:
+* Users are able to list a home for sale with the following required fields:
   * Address
   * City
   * State
